@@ -1,0 +1,17 @@
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js
+note over browser
+the script at spa.js generates an asynchronous 
+GET request to obtain the data.json
+end note 
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: data.json 
+note over browser
+if there is a correct response, the script 
+renders the data in the html using 
+createElemend and appendChild
+end note 

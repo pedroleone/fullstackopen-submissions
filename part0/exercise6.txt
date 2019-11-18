@@ -1,0 +1,9 @@
+note over browser
+the script at spa.js renders the new element in
+the list without waiting for the server
+
+the script at spa.js generates an asynchronous 
+request sending the data to the server
+end note 
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: Response 201 Created

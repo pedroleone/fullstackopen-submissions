@@ -1,0 +1,31 @@
+note over browser:
+browser sends the form data to the
+action URI referenced by the form
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/newnote
+note over server
+the server responds with an 302
+response, redirecting to /note 
+end note  
+server-->browser: HTTP POST 302 Found location: /notes 
+note over browser: 
+now starts a normal request to render the page 
+end note 
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+note over browser:
+now the script at main.js requests the
+data.json
+end note 
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: data.json 
+note over browser:
+when data.json is received, the javascript 
+renders the notes on the page 
+end note 
+
+
